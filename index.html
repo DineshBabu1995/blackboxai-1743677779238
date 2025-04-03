@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .weather-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-600 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto weather-card rounded-xl shadow-lg p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-white">Weather App</h1>
+                <a href="settings.html" class="text-white hover:text-gray-200">
+                    <i class="fas fa-cog text-xl"></i>
+                </a>
+            </div>
+            
+            <div class="search-container mb-6">
+                <div class="relative">
+                    <input type="text" id="locationInput" placeholder="Search location..." 
+                        class="w-full p-3 rounded-lg bg-white bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button id="searchBtn" class="absolute right-2 top-2 text-blue-500 hover:text-blue-700">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="weatherDisplay" class="text-center">
+                <div id="location" class="text-xl font-semibold text-white mb-2">Loading...</div>
+                <div id="currentTemp" class="text-5xl font-bold text-white my-4">--°C</div>
+                <div id="weatherCondition" class="text-white mb-4">
+                    <i class="fas fa-question-circle text-4xl"></i>
+                    <div class="text-lg mt-2">--</div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4 mt-6 text-white">
+                    <div>
+                        <div class="text-sm opacity-80">Humidity</div>
+                        <div id="humidity" class="font-semibold">--%</div>
+                    </div>
+                    <div>
+                        <div class="text-sm opacity-80">Wind</div>
+                        <div id="windSpeed" class="font-semibold">-- km/h</div>
+                    </div>
+                    <div>
+                        <div class="text-sm opacity-80">Feels Like</div>
+                        <div id="feelsLike" class="font-semibold">--°C</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="mt-4 text-red-200 hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
